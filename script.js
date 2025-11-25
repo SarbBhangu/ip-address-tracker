@@ -22,3 +22,11 @@ const ipElement = document.getElementById("ip-address");
 const locationElement = document.getElementById("location");
 const timezoneElement = document.getElementById("timezone");
 const ispElement = document.getElementById("isp");
+
+async function fetchUserIP() {
+  const response = await fetch("https://api.ipify.org?format=json");
+  const data = await response.json();
+  console.log("IP data from API:", data);
+}
+
+fetchUserIP();
