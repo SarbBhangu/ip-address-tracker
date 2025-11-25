@@ -30,9 +30,9 @@ formElement.addEventListener("submit", function (event) {
     const userInput = inputElement.value.trim();
     
     if (!userInput) {
-        console.log("No input provided");
-        return;
-        }
+        alert("Please enter an IP address or domain.");
+     return;
+    }
     
     console.log("Form submitted with:", userInput);
     ipElement.textContent = userInput;
