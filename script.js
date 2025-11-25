@@ -22,6 +22,9 @@ const ipElement = document.getElementById("ip-address");
 const locationElement = document.getElementById("location");
 const timezoneElement = document.getElementById("timezone");
 const ispElement = document.getElementById("isp");
+const formElement = document.querySelector(".ip-form");
+const inputElement = document.querySelector(".ip-input");
+
 
 async function fetchUserIP() {
     try {
