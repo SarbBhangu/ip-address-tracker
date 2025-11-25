@@ -24,9 +24,24 @@ const timezoneElement = document.getElementById("timezone");
 const ispElement = document.getElementById("isp");
 
 async function fetchUserIP() {
-  const response = await fetch("https://api.ipify.org?format=json");
-  const data = await response.json();
-  console.log("IP data from API:", data);
-}
+    try {
+        const response = await fetch("https://api.ipify.org?format=json");
 
+        if (!response.ok) {
+            throw new Error("Failed to fetch IP address")
+        }
+
+        const data = await response.json();
+        console.log("IP data from API:", data);
+
+        ipElement.textContent = data.ip;
+    
+    }catch (error) {
+        console.error("Error in fetchUserIP:", error);
+
+        ipElement.textContent = "Unable to load IP";
+        ipElement.style.color = "red";
+    }
+}
 fetchUserIP();
+
