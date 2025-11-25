@@ -25,6 +25,19 @@ const ispElement = document.getElementById("isp");
 const formElement = document.querySelector(".ip-form");
 const inputElement = document.querySelector(".ip-input");
 
+formElement.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const userInput = inputElement.value.trim();
+    
+    if (!userInput) {
+        console.log("No input provided");
+        return;
+        }
+    
+    console.log("Form submitted with:", userInput);
+    ipElement.textContent = userInput;
+    fetchGeoData(userInput);
+});
 
 async function fetchUserIP() {
     try {
@@ -51,8 +64,8 @@ async function fetchUserIP() {
 fetchUserIP();
 
 async function fetchGeoData(ip){
-    const apiKey = "YOUR_API_KEY_HERE"; 
-
+    const apiKey = "YOUR_API_KEY_HERE";
+    
     const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`;
 
     try {
