@@ -35,6 +35,8 @@ async function fetchUserIP() {
         console.log("IP data from API:", data);
 
         ipElement.textContent = data.ip;
+
+        fetchGeoData(data.ip);
     
     }catch (error) {
         console.error("Error in fetchUserIP:", error);
@@ -45,13 +47,10 @@ async function fetchUserIP() {
 }
 fetchUserIP();
 
-
-
-async function testGeoApi() {
+async function fetchGeoData(ip){
     const apiKey = "YOUR_API_KEY_HERE"; 
-    const testIp = "8.8.8.8";
 
-    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${testIp}`;
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`;
 
     try {
     const response = await fetch(url);
@@ -61,11 +60,23 @@ async function testGeoApi() {
         }
 
         const data = await response.json();
-        console.log("Geo API test data:", data);
+        console.log("fetchGeoData result:", data);
+
+        const { city, region, country, timezone, lat, lng} = data.location 
+
+        locationElement.textContent = `${city}, ${region}, ${country}`;
+        timezoneElement.textContent = `UTC ${timezone}`;
+        ispElement.textContent = data.isp || "Unknown ISP";
+
+        updateMap(lat, lng);
 
     } catch (error) {
-        console.error("Error in testGeoApi:", error);
+        console.error("Error in fetchGeoData:", error);
+
+        locationElement.textContent = "Location unavailable";
+        timezoneElement.textContent = "Timezone unavailable";
+        ispElement.textContent = "ISP unavailable";
   }
 }
 
-testGeoApi();
+
