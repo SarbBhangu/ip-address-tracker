@@ -18,3 +18,7 @@ function updateMap(lat, lng) {
 }
 updateMap(39.1031, -84.5120);
 
+const ipElement = document.getElementById("ip-address");
+const locationElement = document.getElementById("location");
+const timezoneElement = document.getElementById("timezone");
+const ispElement = document.getElementById("isp");
