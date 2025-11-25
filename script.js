@@ -45,3 +45,27 @@ async function fetchUserIP() {
 }
 fetchUserIP();
 
+
+
+async function testGeoApi() {
+    const apiKey = "YOUR_API_KEY_HERE"; 
+    const testIp = "8.8.8.8";
+
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${testIp}`;
+
+    try {
+    const response = await fetch(url);
+
+        if (!response.ok) {
+        throw new Error(`Geo API request failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Geo API test data:", data);
+
+    } catch (error) {
+        console.error("Error in testGeoApi:", error);
+  }
+}
+
+testGeoApi();
