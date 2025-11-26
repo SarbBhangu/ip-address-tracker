@@ -64,11 +64,7 @@ async function fetchUserIP() {
 fetchUserIP();
 
 async function fetchGeoData(ip){
-    let apiKey = "YOUR_API_KEY_HERE";
-
-        if (typeof IPIFY_API_KEY !== "undefined") {
-        apiKey = IPIFY_API_KEY;
-        }       
+    const apiKey = "at_diIRo9ak0kl7JCgOKbq3ZxykUqdZX";
     
     const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`;
 

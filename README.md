@@ -13,19 +13,21 @@ The app allows users to:
 
 This project was completed as part of a Frontend Mentor challenge and reinforced key skills such as API integration, DOM manipulation, async JavaScript, and responsive design.
 
+# Live Demo
+https://sarbbhangu.github.io/ip-address-tracker/
+
 # Whats inside
 
 ip-address-tracker/
-│── index.html
-│── styles.css
-│── script.js
-│── config.js
-│── README.md
-│── images/
-│── design/
-│── .gitignore
+- index.html
+- styles.css
+- script.js
+- README.md
+- images/
+- design/
+- .gitignore
 
-# how it works
+# How it works
 
 1. Enter an IP adress or domain (try 8.8.8.8)
 2. Click search button
