@@ -14,6 +14,7 @@ The app allows users to:
 This project was completed as part of a Frontend Mentor challenge and reinforced key skills such as API integration, DOM manipulation, async JavaScript, and responsive design.
 
 # Live Demo
+View the live app here:
 https://sarbbhangu.github.io/ip-address-tracker/
 
 # Whats inside
