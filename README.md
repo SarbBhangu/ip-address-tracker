@@ -30,10 +30,10 @@ ip-address-tracker/
 
 # How it works
 
-1. Enter an IP adress or domain (try 8.8.8.8)
+1. Enter an IP address or domain (try 8.8.8.8)
 2. Click search button
 3. Map updates automatically
-4. App loads your own IP adresss when the page first loads
+4. App loads your own IP address when the page first loads
 
 # Reflection
 
